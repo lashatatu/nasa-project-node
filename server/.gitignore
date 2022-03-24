@@ -22,9 +22,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/public/static
-/public/asset-manifest.json
-/public/favicon.ico
-/public/manifest.json
-/public/robots.txt
-/public/index.html
