@@ -32,12 +32,10 @@ async function httpSubmitLaunch (launch) {
 async function httpAbortLaunch (id) {
 	try {
 		return await fetch(`${API_URL}/launches/${id}`, {
-			method: "DELETE",
-			headers: {
-				"Content-Type": "application/json",
-			},
+			method: "delete",
 		});
-	}catch ( err ) {
+	} catch ( err ) {
+		console.log(err);
 		return {
 			ok: false,
 		};

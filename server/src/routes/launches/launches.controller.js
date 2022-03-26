@@ -26,6 +26,7 @@ function httpAddNewLaunch (req, res) {
 
 function httpDeleteLaunch (req, res) {
 	const launchId = Number(req.params.id);
+
 	if ( !existsLaunchWIthId(launchId) ) {
 		return res.status(404).json({
 			error: "Launch not found",
@@ -37,7 +38,5 @@ function httpDeleteLaunch (req, res) {
 }
 
 module.exports = {
-	httpGetAllLaunches,
-	httpAddNewLaunch,
-	httpDeleteLaunch,
+	httpGetAllLaunches, httpAddNewLaunch, httpDeleteLaunch,
 };
