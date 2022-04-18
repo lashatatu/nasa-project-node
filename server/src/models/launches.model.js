@@ -3,55 +3,55 @@ const launches = new Map();
 let latestFlightNumber = 100;
 
 const launch = {
-	flightNumber: 100,
-	mission: "test",
-	rocket: "test",
-	launchDate: new Date("December 28, 2030"),
-	target: "kepler-442 b",
-	customer: [
-		"ZTM",
-		"NASA",
-	],
-	upcoming: true,
-	success: true,
+  flightNumber: 100,
+  mission: 'test',
+  rocket: 'test',
+  launchDate: new Date('December 28, 2030'),
+  target: 'kepler-442 b',
+  customer: [
+    'ZTM',
+    'NASA',
+  ],
+  upcoming: true,
+  success: true,
 };
 
 launches.set(launch.flightNumber, launch);
 
 function existsLaunchWIthId (launchId) {
-	return launches.has(launchId);
+  return launches.has(launchId);
 }
 
 function getAllLaunches () {
-	return Array.from(launches.values());
+  return Array.from(launches.values());
 }
 
 function addNewLaunch (launch) {
-	latestFlightNumber++;
-	launches.set(
-		 latestFlightNumber,
-		 Object.assign(launch, {
-			 success: true,
-			 upcoming: true,
-			 customers: [
-				 "lashatatu",
-				 "Tbilisi",
-			 ],
-			 flightNumber: latestFlightNumber,
-		 }),
-	);
+  latestFlightNumber++;
+  launches.set(
+    latestFlightNumber,
+    Object.assign(launch, {
+      success: true,
+      upcoming: true,
+      customers: [
+        'lashatatu',
+        'Tbilisi',
+      ],
+      flightNumber: latestFlightNumber,
+    }),
+  );
 }
 
 function abortLaunchById (launchId) {
-	const aborted = launches.get(launchId);
-	aborted.upcoming = false;
-	aborted.success = false;
-	return aborted;
+  const aborted = launches.get(launchId);
+  aborted.upcoming = false;
+  aborted.success = false;
+  return aborted;
 }
 
 module.exports = {
-	getAllLaunches,
-	addNewLaunch,
-	existsLaunchWIthId,
-	abortLaunchById,
+  getAllLaunches,
+  addNewLaunch,
+  existsLaunchWIthId,
+  abortLaunchById,
 };
