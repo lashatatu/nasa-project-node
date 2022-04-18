@@ -1,3 +1,5 @@
+// const launches=require('./launches.mongo');
+
 const launches = new Map();
 
 let latestFlightNumber = 100;
@@ -8,7 +10,7 @@ const launch = {
   rocket: 'test',
   launchDate: new Date('December 28, 2030'),
   target: 'kepler-442 b',
-  customer: [
+  customers: [
     'ZTM',
     'NASA',
   ],
