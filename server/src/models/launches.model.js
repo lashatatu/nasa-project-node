@@ -10,7 +10,7 @@ const launch = {
   mission: 'test',
   rocket: 'test',
   launchDate: new Date('December 28, 2030'),
-  target: 'kepler-442 b',
+  target: 'Kepler-442 b',
   customers: [
     'ZTM',
     'NASA',
@@ -59,20 +59,19 @@ async function saveLaunch (launch) {
   });
 }
 
-function addNewLaunch (launch) {
-  latestFlightNumber++;
-  launches.set(
-    latestFlightNumber,
-    Object.assign(launch, {
-      success: true,
-      upcoming: true,
-      customers: [
-        'lashatatu',
-        'Tbilisi',
-      ],
-      flightNumber: latestFlightNumber,
-    }),
-  );
+async function scheduleNewLaunch(launch){
+  const newFlightNumber = await getLatestFlightNumber();
+  const newLaunch = {
+    customers: [
+      'ZTM',
+      'NASA',
+    ],
+    upcoming: true,
+    success: true,
+    flightNumber: newFlightNumber,
+  };
+
+  saveLaunch(newLaunch);
 }
 
 function abortLaunchById (launchId) {
@@ -84,7 +83,7 @@ function abortLaunchById (launchId) {
 
 module.exports = {
   getAllLaunches,
-  addNewLaunch,
   existsLaunchWIthId,
   abortLaunchById,
+  scheduleNewLaunch,
 };
