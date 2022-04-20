@@ -109,12 +109,12 @@ async function getLatestFlightNumber () {
   return latestLaunch.flightNumber;
 }
 
-async function getAllLaunches () {
+async function getAllLaunches (skip, limit) {
   return launchesDatabase
     .find({}, {
       '_id': 0,
       '__v': 0,
-    }).skip(20).limit(50);
+    }).skip(skip).limit(limit);
 }
 
 async function saveLaunch (launch) {
