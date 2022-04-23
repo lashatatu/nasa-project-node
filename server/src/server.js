@@ -9,7 +9,7 @@ const {loadLaunchData} = require('./models/launches.model');
 const PORT = process.env.PORT || 8000;
 
 const server = http.createServer(app);
-//re
+//rea
 async function startServer () {
   await mongoConnect();
   await loadPlanetsData();
