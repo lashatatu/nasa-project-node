@@ -24,9 +24,5 @@
   "bugs": {
     "url": "https://github.com/lashatatu/nasa-project-node/issues"
   },
-  "homepage": "https://github.com/lashatatu/nasa-project-node#readme",
-  "dependencies": {
-    "axios": "^0.26.1",
-    "dotenv": "^16.0.0"
-  }
+  "homepage": "https://github.com/lashatatu/nasa-project-node#readme"
 }
